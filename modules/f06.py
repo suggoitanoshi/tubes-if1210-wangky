@@ -1,35 +1,80 @@
-def filter_umur(f):
+import modules.globalvars as globalvars
+
+def filter_umur(w, n, f):
   """Mengembalikan wahana yang difilter berdasarkan umur
   
   Parameters:
   ----------
+  w: list wahana [(ID_Wahana, Nama_Wahana, Harga_Tiket, Batasan_Umur, Batasan_Tinggi)]
+    list wahana yang akan difilter
+  n: int
+    jumlah wahana masukan
   f: int
     Filter umur yang digunakan
     0: Semua umur
     1: Anak-anak
     2: Dewasa
-  Return
+  Return: (fw, fn)
   ---
-  wahana yang sudah difilter
+  fw: wahana
+    wahana yang sudah difilter
+  fn: int
+    jumlah wahana yang terfilter
   """
-  # TODO: buat implementasi berdasarkan struktur data wahana di memori
-  pass
-def filter_tinggi(f):
+  fw = [globalvars.list_wahana_default for _ in range(n)]
+  fn = 0
+  for i in range(n):
+    if w[i][3] == f:
+      fw[fn] = w[i]
+      fn += 1
+  return (fw, fn)
+
+def filter_tinggi(w, n, f):
   """Mengembalikan wahana yang difilter berdasarkan tinggi
   Parameters:
   ---
+  w: list wahana [(ID_Wahana, Nama_Wahana, Harga_Tiket, Batasan_Umur, Batasan_Tinggi)]
+  n: int
+    jumlah wahana yang akan difilter
   f: bool
     Filter tinggi yang digunakan
     true: tinggi >= 170cm
     false: semua tinggi
-  Return
+  Return: (fw, fn)
   ---
-  wahana yang sudah difilter
+  fw: wahana
+    wahana yang sudah difilter
+  fn: int
+    jumlah wahana yang terfilter
   """
-  # TODO: buat implementasi berdasarkan struktur data wahana di memori
-  # mengembalikan 
-  pass
+  fw = [globalvars.list_wahana_default for _ in range(n)]
+  fn = 0
+  for i in range(n):
+    if w[i][4] == f:
+      fw[fn] = w[i]
+      fn += 1
+  return (fw, fn)
 
 def search_wahana():
   """Mencari wahana di memori sesuai ketentuan"""
-  pass
+  print('Jenis batasan umur:')
+  print('1. Anak-anak (<17 tahun)')
+  print('2. Dewasa (>=17 tahun)')
+  print('3. Semua umur')
+  print('')
+  print('Jenis batasan tinggi badan:')
+  print('1. Lebih dari 170 cm')
+  print('2. Tanpa batasan')
+  print('')
+  batasan_umur = int(input('Batasan umur pemain: '))
+  batasan_tinggi = int(input('Batasan tinggi badan: '))
+
+  filter_umur = batasan_umur - 1
+  filter_tinggi = True if batasan_tinggi == 1 else False
+
+  (hasil_filter, n) = filter_umur(globalvars.list_wahana, globalvars.list_wahana_count, filter_umur)
+  (hasil_filter, n) = filter_tinggi(hasil_filter, n, filter_tinggi)
+
+  print('Hasil pencarian:')
+  for i in range(n):
+    print('%s | %s | %d' %(hasil_filter[i][0], hasil_filter[i][1], hasil_filter[i][2]))
