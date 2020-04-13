@@ -30,9 +30,11 @@ list_wahana_default = ('','',0,0,False)
 list_wahana_count = 0
 
 # Global vars
-current_username = ''
-current_role = 'Admin'
+current_login = users_default
 
 # Global message const
 LOGIN_MESSAGE = 'Anda belum login. Silahkan login dulu!'
 NOT_PLAYER_MESSAGE = 'Anda bukan pemain, tidak bisa membeli tiket.'
+NOT_ENOUGH_SALDO_MESSAGE = 'Saldo anda tidak cukup. Silakan mengisi saldo anda.'
+CANNOT_PLAY_MESSAGE = '''Anda tidak memenuhi persyaratan untuk memainkan wahana ini.
+      Silakan menggunakan wahana lain yang tersedia.'''
