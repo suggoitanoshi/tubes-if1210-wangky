@@ -42,3 +42,4 @@ NOT_PLAYER_MESSAGE = 'Anda bukan pemain, tidak bisa membeli tiket.'
 NOT_ENOUGH_SALDO_MESSAGE = 'Saldo anda tidak cukup. Silakan mengisi saldo anda.'
 CANNOT_PLAY_MESSAGE = '''Anda tidak memenuhi persyaratan untuk memainkan wahana ini.
       Silakan menggunakan wahana lain yang tersedia.'''
+FAIL_LOGIN = "Ups, password salah atau kamu tidak terdaftar dalam sistem kami, Silahkan coba lagi!"
