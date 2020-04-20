@@ -49,11 +49,11 @@ def refund():
             # Masukkan data refund ke array
             # Asumsikan ada array sementara dengan indeks lebih 1 dari array sebelumnya
             # Array tersebut dapat diinisialisasi dalam Temp
-            Temp = [0 for i in range(globalvars.kepemilikan_count+1)]
-            for i in range(globalvars.kepemilikan_count):
-                Temp[i]=globalvars.kepemilikan_tiket[i]
-            Temp[globalvars.kepemilikan_count]=(globalvars.current_login[2],current_tanggal,current_id_wahana,refund_amount)
-            globalvars.kepemilikan_tiket=Temp
+            Temp = [0 for i in range(globalvars.refund_count+1)]
+            for i in range(globalvars.refund_count):
+                Temp[i]=globalvars.refund_tiket[i]
+            Temp[globalvars.refund_count]=(globalvars.current_login[2],current_tanggal,current_id_wahana,refund_amount)
+            globalvars.refund_tiket=Temp
             # Setelah uang dikembalikan ke saldo dan update pada database
             print("Uang refund sudah kami berikan pada akun Anda.")
         else:

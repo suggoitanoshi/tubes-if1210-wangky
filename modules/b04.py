@@ -24,8 +24,8 @@ def tiket_hilang():
         # Untuk update database kehilangan_tiket
         # Asumsikan ada array sementara dengan indeks lebih 1 dari array sebelumnya
         # Array tersebut dapat diinisialisasi dalam Temp
-        Temp = [0 for i in range(globalvars.kepemilikan_count+1)]
-        for i in range(globalvars.kepemilikan_count):
+        Temp = [0 for i in range(globalvars.kehilangan_count+1)]
+        for i in range(globalvars.kehilangan_count):
             Temp[i]=globalvars.kehilangan_tiket[i]
         Temp[globalvars.kehilangan_count]=(current_username,current_tanggal,current_id_wahana,lost_count)
         globalvars.kehilangan_tiket=Temp
