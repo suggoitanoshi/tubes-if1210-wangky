@@ -41,6 +41,7 @@
 ### F07 - Beli Tiket
 - function has_login
 - function is_player
+- function search_wahana
 - function can_play
 - procedure buy_ticket
 ### F08 - Pakai Tiket
