@@ -28,6 +28,10 @@ users_count = 0
 list_wahana = []
 list_wahana_default = ['','',0,0,False]
 list_wahana_count = 0
+# kehilangan_tiket: Arrray of kehilangan (Username, Tanggal_Kehilangan, ID_Wahana, Jumlah_Tiket)
+kehilangan_tiket = []
+kehilangan_default = ['','','',0]
+kehilangan_count = 0
 
 # Global vars
 current_login = users_default
@@ -38,5 +42,3 @@ NOT_PLAYER_MESSAGE = 'Anda bukan pemain, tidak bisa membeli tiket.'
 NOT_ENOUGH_SALDO_MESSAGE = 'Saldo anda tidak cukup. Silakan mengisi saldo anda.'
 CANNOT_PLAY_MESSAGE = '''Anda tidak memenuhi persyaratan untuk memainkan wahana ini.
       Silakan menggunakan wahana lain yang tersedia.'''
-# F02
-FAIL_LOGIN = "Ups, password salah atau kamu tidak terdaftar dalam sistem kami, Silahkan coba lagi!"
