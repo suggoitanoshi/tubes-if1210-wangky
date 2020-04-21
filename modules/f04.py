@@ -1,20 +1,20 @@
-# F04 - Sign Up User
+# F02 - Login User
 
 # KAMUS
 
-def sign_up():
+def login():
     """[program fungsi]
     ---
     Parameter : -
-    Output : 
+    Output : Pesan sukses/ gagal login, akun sudah dapat bermain 
     ---
     """
-    input_nama = input("Masukkan nama pemain: ")
-    input_ttl = input("Masukkan tanggal lahir pemain (DD/MM/YYYY: ")
-    input_tinggi = input("Masukkan tinggi badan pemain (cm): ")
-    input_user = input("Masukkan username pemain: ")
-    input_pass = input("Masukkan password pemain: ")
-    print()
+    input_user = input("Masukkan username: ")
+    input_pass = input("Masukkan password: ")
     
-    # masukin fungsi untuk nambahin data ke array
-    print("Selamat menjadi pemain, " + input_nama + ". Selamat bermain.")
+    for i in #nama_array:
+        if user == #nama_array[i] and pswd == nama_array[i] :
+            print("Selamat bersenang-senang,", input_user,"!")
+    
+        else:
+            print(globalvars.FAIL_LOGIN)
