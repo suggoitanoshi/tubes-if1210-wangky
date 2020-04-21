@@ -5,6 +5,7 @@
 |-------|------|------------|
 |`Nama`| String | Nama pengguna |
 |`Tanggal_Lahir`| String | Tanggal* lahir |
+|`Tinggi_Badan` | int | Tinggi badan dalam satuan cm |
 |`Username`| String | Username pengguna |
 |`Password`| String | Password pengguna |
 |`Role`| String | Role pengguna (`Pemain`/`Admin`) untuk menentukan akses |

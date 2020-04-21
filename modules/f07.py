@@ -12,10 +12,11 @@ def can_play(w):
   """
   tinggi = 0
   umur = 0
-  # TODO: tambah field tinggi di user?
-  # tinggi = globalvars.users[i][x]
+  tinggi = globalvars.current_login[2]
   umur = 2020 - int(globalvars.current_login[1][6:])
-  return (w[3] == 0) or (w[3] == 1 and umur <= 17) or (w[3] == 2 and umur > 17)
+  kondisi = (w[3] == 0) or (w[3] == 1 and umur <= 17) or (w[3] == 2 and umur > 17)
+  kondisi = kondisi and ((w[4] and tinggi >= 170) or (not w[4]))
+  return kondisi
 
 def search_wahana(id):
   """Fungsi mencari wahana berdasarkan ID
@@ -53,7 +54,14 @@ def buy_ticket():
     if can_play(wahana):
       if(buy_amount*wahana[2] <= globalvars.current_login[5]):
         nama_wahana = wahana[1]
-        # TODO: tambah jumlah tiket pengguna di memori
+        username = globalvars.current_login[3]
+        globalvars.current_login[6] -= wahana[2]
+        globalvars.kepemilikan_count += 1
+        globalvars.kepemilikan_tiket[globalvars.kepemilikan_count-1] =\
+          [username,wahana[0], buy_amount]
+        globalvars.pembelian_count += 1
+        globalvars.pembelian_tiket[globalvars.pembelian_count-1] =\
+          [username,current_tanggal,wahana[0],buy_amount]
         print('Selamat bersenang-senang di',nama_wahana)
       else:
         print(globalvars.NOT_ENOUGH_SALDO_MESSAGE)

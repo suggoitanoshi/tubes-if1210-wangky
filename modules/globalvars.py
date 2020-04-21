@@ -43,3 +43,4 @@ NOT_ENOUGH_SALDO_MESSAGE = 'Saldo anda tidak cukup. Silakan mengisi saldo anda.'
 CANNOT_PLAY_MESSAGE = '''Anda tidak memenuhi persyaratan untuk memainkan wahana ini.
       Silakan menggunakan wahana lain yang tersedia.'''
 FAIL_LOGIN = "Ups, password salah atau kamu tidak terdaftar dalam sistem kami, Silahkan coba lagi!"
+NOT_VALID_TICKET_ERROR = "Tiket anda tidak valid dalam sistem kami."
