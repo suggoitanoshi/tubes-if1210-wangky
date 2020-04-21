@@ -2,8 +2,8 @@ import modules.common as common
 import modules.globalvars as globalvars
 
 def tiket_hilang():
-'''Prosedur untuk menerima laporan tiket yang hilang kemudian
-   mengurangi jumlah kepemilikan tiket sesuai jumlah tiket yang hilang'''
+    """Prosedur untuk menerima laporan tiket yang hilang kemudian
+    mengurangi jumlah kepemilikan tiket sesuai jumlah tiket yang hilang"""
     if not common.has_login():
         print(globalvars.LOGIN_MESSAGE)
     elif not common.is_player():
@@ -16,7 +16,7 @@ def tiket_hilang():
         #Mengurangi kepemilikan tiket sesuai dengan jumlah tiket yang hilang
         i = 0
         #Mencari username yang kehilangan tiket dan tiket untuk wahana apa
-        while i < globalvars.list_kepemilikan_count:
+        while i < globalvars.kepemilikan_count:
             if globalvars.kepemilikan_tiket[i][0] == current_username and globalvars.kepemilikan_tiket[i][1] == current_id_wahana:
                 globalvars.kepemilikan_tiket[i][2]-=lost_count
             else:
