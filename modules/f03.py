@@ -10,7 +10,7 @@ def sign_up():
     ---
     """
     input_nama = input("Masukkan nama pemain: ")
-    input_ttl = input("Masukkan tanggal lahir pemain (DD/MM/YYYY: ")
+    input_ttl = input("Masukkan tanggal lahir pemain (DD/MM/YYYY): ")
     input_tinggi = input("Masukkan tinggi badan pemain (cm): ")
     input_user = input("Masukkan username pemain: ")
     input_pass = input("Masukkan password pemain: ")
