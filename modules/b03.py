@@ -19,6 +19,7 @@ def sort_wahana_by_ticket():
       if ret[i][0] == cid:
         ret[i][2] += n
         found = True
+      else: j += 1
   # Sorting (Insertion)
   for i in range(1, globalvars.list_wahana_count):
     curr = ret[i]
