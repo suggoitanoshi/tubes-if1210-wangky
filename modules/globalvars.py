@@ -20,9 +20,9 @@ penggunaan_count = 0
 refund_tiket = []
 refund_default = ['','','',0]
 refund_count = 0
-# users: Array of user (Nama, Tanggal_Lahir, Username, Password, Role, Saldo)
+# users: Array of user (Nama, Tanggal_Lahir, Tinggi_Badan, Username, Password, Role, Saldo)
 users = []
-users_default = ['','','','','',0]
+users_default = ['','',0,'','','',0]
 users_count = 0
 # list_wahana: Array of wahana (ID_Wahana, Nama_Wahana, Harga_Tiket, Batasan_Umur, Batasan_Tinggi)
 list_wahana = []
