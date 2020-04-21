@@ -7,4 +7,7 @@ def has_login():
   return globalvars.current_login[2] != '' 
 def is_player():
   """Menentukan apakah pengguna yang login adalah player atau bukan"""
-  return globalvars.current_login[4] == 'Pemain'
+  return globalvars.current_login[5] == 'Pemain'
+def is_admin():
+  """Menentukan apakah pengguna yang login adalah admin atau bukan"""
+  return globalvars.current_login[5] == 'Admin'
