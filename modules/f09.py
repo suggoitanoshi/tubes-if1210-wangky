@@ -14,7 +14,7 @@ def check_ticket(id,jml):
     True jika jumlah ticket yang dimiliki lebih dari sama dengan tiket yang ingin direfund
     '''
     i = 0
-    while i < globalvars.list_kepemilikan_count:
+    while i < globalvars.kepemilikan_count:
         if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[2] and globalvars.kepemilikan_tiket[i][1] == id:
             if globalvars.kepemilikan_tiket[i][2]>= jml:
                 return True
@@ -38,10 +38,16 @@ def refund():
         refund_amount = int(input('Jumlah tiket yang di-refund: '))
         if check_ticket(current_id_wahana, refund_amount) :
             # Update saldo
-            current_login[5]+=0.5*refund_amount*globalvars.list_wahana[i][2]
+            j = 0
+            wahanaFound = False
+            while not wahanaFound and j < globalvars.list_wahana_count:
+                if current_id_wahana == globalvars.list_wahana[j][0]:
+                    wahanaFound = True
+                else: j += 1
+            globalvars.current_login[5]+=0.5*refund_amount*globalvars.list_wahana[j][2]
             # Update data kepemilikan
             i=0
-            while i<globalvars.list_kepemilikan_count:
+            while i<globalvars.kepemilikan_count:
                 if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[2]:
                     globalvars.kepemilikan_tiket[i][2]-=refund_amount
                 else:
