@@ -2,17 +2,36 @@ import modules.globalvars as globalvars
 
 def sort_wahana_by_ticket():
   """Mengurutkan wahana berdasarkan jumlah tiket terjual
-  Return: (string, string, int)
+  Return: [[string, string, int]]
   ---
   Wahana yang sudah disort
   """
-  # TODO: transformasi list wahana menjadi tuple seperti pada return
-  # TODO: implementasi sorting
-  # TODO: keluarkan tuple sesuai spek
+  ret = [[globalvars.list_wahana[i][0],globalvars.list_wahana[i][1],0]
+         for i in range(globalvars.list_wahana_count)]
+  # Transformasi menjadi array of [string, string, int]
+  for i in range(globalvars.penggunaan_count):
+    cid = globalvars.penggunaan_tiket[i][2] # ID Wahana
+    n = globalvars.penggunaan_tiket[i][3] # Jumlah tiket
+    # Mencari elemen wahana yang sesuai, karena unsorted.
+    found = False
+    j = 0
+    while not found and j < globalvars.list_wahana_count:
+      if ret[i][0] == cid:
+        ret[i][2] += n
+        found = True
+  # Sorting (Insertion)
+  for i in range(1, globalvars.list_wahana_count):
+    curr = ret[i]
+    j = i-1
+    while j >= 0 and ret[j][2] > curr[2]:
+      ret[j+1] = ret[j]
+      j -= 1
+    ret[j] = curr
+  return ret
 
 def get_top_3_wahana():
   """Mengambil 3 wahana teratas dari list wahana yang sudah disort
-  Return
+  Return [[string, string, int]]
   ---
   3 Wahana sebagai list
   """
