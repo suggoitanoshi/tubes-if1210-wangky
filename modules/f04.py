@@ -1,3 +1,5 @@
+import modules.globalvars as globalvars
+
 # F02 - Login User
 
 # KAMUS
@@ -12,9 +14,13 @@ def login():
     input_user = input("Masukkan username: ")
     input_pass = input("Masukkan password: ")
     
-    for i in #nama_array:
-        if user == #nama_array[i] and pswd == nama_array[i] :
-            print("Selamat bersenang-senang,", input_user,"!")
-    
-        else:
-            print(globalvars.FAIL_LOGIN)
+    user_found = False
+    user_name = ''
+    i = 0
+    while not user_found and i < globalvars.users_count:
+        if input_user == globalvars.users[i][3] and input_pass == globalvars.users[i][4]:
+            globalvars.current_login = globalvars.users[i]
+            user_name = globalvars.current_login[0]
+            print("Selamat bersenang-senang,", user_name,"!")
+    else:
+        print(globalvars.FAIL_LOGIN)
