@@ -10,7 +10,7 @@ def sort_laporan():
         if globalvars.kritik_dan_saran[i][2]<Max:
             Temp[i]=globalvars.kritik_dan_saran[i]
         else:
-            Max=globalvars.kritik_count[1][2]
+            Max=globalvars.kritik_dan_saran[1][2]
     globalvars.kritik_dan_saran=Temp
     return
 
