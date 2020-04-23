@@ -17,7 +17,7 @@
 |`ID_Wahana`| String | Identitas wahana** |
 |`Nama_Wahana`| String | Nama dari wahana |
 |`Harga_Tiket`| int | Harga satu tiket wahana |
-|`Batasan_Umur`| int | `0`: Semua umur <br> `1`: Anak-anak <br> `2`: Dewasa |
+|`Batasan_Umur`| int | `0`: Semua umur <br> `1`: Dewasa <br> `2`: Anak-anak |
 |`Batasan_Tinggi`| boolean | `true`: untuk tinggi >= 170cm <br> `false`: untuk semua tinggi |
 
 ### Pembelian Tiket
