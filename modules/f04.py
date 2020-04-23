@@ -1,4 +1,5 @@
 import modules.globalvars as globalvars
+import modules.b01 as b01
 
 # F02 - Login User
 
@@ -18,7 +19,7 @@ def login():
     user_name = ''
     i = 0
     while not user_found and i < globalvars.users_count:
-        if input_user == globalvars.users[i][3] and input_pass == globalvars.users[i][4]:
+        if input_user == globalvars.users[i][3] and b01.verify(input_pass,globalvars.users[i][4]):
             globalvars.current_login = globalvars.users[i]
             user_name = globalvars.current_login[0]
             user_found = True

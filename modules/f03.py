@@ -1,4 +1,5 @@
 import modules.globalvars as globalvars
+import modules.b01 as b01
 
 # F04 - Sign Up User
 
@@ -18,7 +19,9 @@ def sign_up():
     input_pass = input("Masukkan password pemain: ")
     print()
 
-    globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,input_pass,'Pemain',0]
+    hashed_pass = b01.hashpassword(input_pass)
+
+    globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,hashed_pass,'Pemain',0]
     globalvars.users_count += 1
     
     print("Selamat menjadi pemain, " + input_nama + ". Selamat bermain.")
