@@ -28,7 +28,7 @@ def load():
         for item in csv_reader:
             globalvars.list_wahana[jmlbrs] = [item[0], item[1], int(item[2]), int(item[3]), bool(item[4])]
             jmlbrs += 1
-        globalvars.wahana_count = jmlbrs
+        globalvars.list_wahana_count = jmlbrs
 
     #Pembelian Tiket
     f_user=input('Masukkan nama File Pembelian Tiket: ')    
