@@ -12,8 +12,8 @@ def filter_umur(w, n, f):
   f: int
     Filter umur yang digunakan
     0: Semua umur
-    1: Anak-anak
-    2: Dewasa
+    1: Dewasa
+    2: Anak-anak
   Return: (fw, fn)
   ---
   fw: wahana
@@ -50,7 +50,7 @@ def filter_tinggi(w, n, f):
   fw = [globalvars.list_wahana_default for _ in range(n)]
   fn = 0
   for i in range(n):
-    if w[i][4] == f:
+    if (w[i][4] and f):
       fw[fn] = w[i]
       fn += 1
   return (fw, fn)
