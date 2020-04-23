@@ -59,9 +59,6 @@ while not terminate:
         f14.riwayat_wahana()
       elif command == 'tiket_pemain':
         f15.tiket_pemain()
-      elif command == 'exit':
-        f16.exit()
-        terminate = True
       elif command == 'best_wahana':
         b03.best_wahana()
       elif command == 'tiket_hilang':
@@ -70,5 +67,8 @@ while not terminate:
       print(globalvars.LOGIN_MESSAGE)
   elif command == 'save':
     f02.save()
+  elif command == 'exit':
+    f16.exit()
+    terminate = True
   else:
     print(globalvars.NOT_LOADED)
