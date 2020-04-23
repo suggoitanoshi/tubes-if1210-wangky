@@ -67,6 +67,15 @@ def save():
         #menginput data ke csv
         for i in range(globalvars.kritik_count):
             writer.writerow(globalvars.kritik_dan_saran[i])
+
+    #Kehilangan Tiket
+    f_user=input('Masukkan nama File Kehilangan Tiket: ')    
+    with open('external_files/'+f_user,mode='w',newline='') as csv_file:
+        #baca isi file, masukkan ke variabel csv_reader
+        writer = csv.writer(csv_file, delimiter=',')
+        #menginput data ke csv
+        for i in range(globalvars.kehilangan_count):
+            writer.writerow(globalvars.kehilangan_tiket[i])
             
     print()
     print("Data Berhasil Disimpan!")

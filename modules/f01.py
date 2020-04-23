@@ -90,6 +90,18 @@ def load():
             jmlbrs += 1
         globalvars.kritik_count = jmlbrs
 
+    #Kehilangan Tiket
+    f_user=input('Masukkan nama Kehilangan Tiket: ')    
+    with open('external_files/'+f_user) as csv_file:
+        #baca isi file, masukkan ke variabel csv_reader
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        #Masukkan data ke array global, catat jumlah data
+        jmlbrs=0
+        for item in csv_reader:
+            globalvars.kehilangan_tiket[jmlbrs] = [item[0], item[1], int(item[2])]
+            jmlbrs += 1
+        globalvars.kehilangan_count = jmlbrs
+
     globalvars.loaded = True
     print()
     print("File perusahaan Willy Wangky's Chocolate Factory telah di-load.")
