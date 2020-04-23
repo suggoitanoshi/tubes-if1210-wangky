@@ -1,3 +1,5 @@
+import modules.globalvars as globalvars
+
 # F04 - Sign Up User
 
 # KAMUS
@@ -15,6 +17,8 @@ def sign_up():
     input_user = input("Masukkan username pemain: ")
     input_pass = input("Masukkan password pemain: ")
     print()
+
+    globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,input_pass,'Pemain',0]
+    globalvars.users_count += 1
     
-    # masukin fungsi untuk nambahin data ke array
     print("Selamat menjadi pemain, " + input_nama + ". Selamat bermain.")
