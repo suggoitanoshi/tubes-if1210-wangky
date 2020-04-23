@@ -5,7 +5,7 @@ import modules.globalvars as globalvars
 #KAMUS
 
 def tambah_wahana():
-    baru=['*','*',0,0,False]
+    baru=globalvars.list_wahana_default
     print('Masukkan Informasi Wahana yang ditambahkan:')
     baru[0]=str(input('Masukkan ID Wahana: '))
     baru[1]=str(input('Masukkan Nama Wahana: '))
