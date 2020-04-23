@@ -154,6 +154,7 @@ def load():
             isi=[a[0],a[1],a[2],a[3]]
             globalvars.kritik_dan_saran[i]=isi
 
+    globalvars.loaded = True
     print()
     print("File perusahaan Willy Wangky's Chocolate Factory telah di-load.")
     print()

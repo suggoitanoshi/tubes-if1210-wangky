@@ -36,6 +36,7 @@ kehilangan_count = 0
 
 # Global vars
 current_login = users_default
+loaded = False
 
 # Global message const
 LOGIN_MESSAGE = 'Anda belum login. Silahkan login dulu!'
