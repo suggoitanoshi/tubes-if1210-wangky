@@ -19,7 +19,7 @@ def cari_pemain():
     user_found = False
     i = 0
     while not user_found and  i < globalvars.users_count:
-        if input_user == globalvars.users[i][4] and input_nama == globalvars.users[i][0] and\
+        if input_user == globalvars.users[i][3] and input_nama == globalvars.users[i][0] and\
            input_tinggi == globalvars.users[i][2] and input_ttl == globalvars.users[i][1]:
             user_found = True 
             print(input_nama, "telah terdaftar sebagai pemain, Silahkan Login dan Selamat Bermain.")
