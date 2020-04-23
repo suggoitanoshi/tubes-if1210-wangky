@@ -52,7 +52,7 @@ def buy_ticket():
     buy_amount = int(input('Jumlah tiket yang dibeli: '))
     wahana = search_wahana(current_id_wahana)
     if can_play(wahana):
-      if(buy_amount*wahana[2] <= globalvars.current_login[5]):
+      if(buy_amount*wahana[2] <= globalvars.current_login[6]):
         nama_wahana = wahana[1]
         username = globalvars.current_login[3]
         globalvars.current_login[6] -= wahana[2]
