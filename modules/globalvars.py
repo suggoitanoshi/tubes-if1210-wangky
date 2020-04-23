@@ -46,3 +46,4 @@ CANNOT_PLAY_MESSAGE = '''Anda tidak memenuhi persyaratan untuk memainkan wahana 
       Silakan menggunakan wahana lain yang tersedia.'''
 FAIL_LOGIN = "Ups, password salah atau kamu tidak terdaftar dalam sistem kami, Silahkan coba lagi!"
 NOT_VALID_TICKET_ERROR = "Tiket anda tidak valid dalam sistem kami."
+NOT_LOADED = "Program belum me-load file."
