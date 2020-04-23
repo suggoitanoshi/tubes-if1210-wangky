@@ -26,9 +26,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], int(item[2]), int(item[3]), bool(item[4])]
+            globalvars.list_wahana[jmlbrs] = [item[0], item[1], int(item[2]), int(item[3]), bool(item[4])]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.wahana_count = jmlbrs
 
     #Pembelian Tiket
     f_user=input('Masukkan nama File Pembelian Tiket: ')    
@@ -38,9 +38,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
+            globalvars.pembelian_tiket[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.pembelian_count = jmlbrs
 
     #Penggunaan Tiket
     f_user=input('Masukkan nama File Penggunaan Tiket: ')    
@@ -50,9 +50,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
+            globalvars.penggunaan_tiket[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.penggunaan_count = jmlbrs
 
     #Kepemilikan Tiket
     f_user=input('Masukkan nama File Kepemilikan Tiket: ')    
@@ -62,9 +62,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], int(item[2])]
+            globalvars.kepemilikan_tiket[jmlbrs] = [item[0], item[1], int(item[2])]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.kepemilikan_count = jmlbrs
 
     #Refund Tiket
     f_user=input('Masukkan nama File Refund Tiket: ')    
@@ -74,9 +74,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
+            globalvars.refund_tiket[jmlbrs] = [item[0], item[1], item[2], int(item[3])]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.refund_count = jmlbrs
 
     #Kritik dan Saran
     f_user=input('Masukkan nama File Kritik dan Saran: ')    
@@ -86,9 +86,9 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0], item[1], item[2], item[3]]
+            globalvars.kritik_dan_saran[jmlbrs] = [item[0], item[1], item[2], item[3]]
             jmlbrs += 1
-        globalvars.users_count = jmlbrs
+        globalvars.kritik_count = jmlbrs
 
     globalvars.loaded = True
     print()
