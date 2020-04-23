@@ -69,11 +69,11 @@ def search_wahana():
   batasan_umur = int(input('Batasan umur pemain: '))
   batasan_tinggi = int(input('Batasan tinggi badan: '))
 
-  filter_umur = batasan_umur - 1
-  filter_tinggi = True if batasan_tinggi == 1 else False
+  fumur = (3-batasan_umur)
+  ftinggi = True if batasan_tinggi == 1 else False
 
-  (hasil_filter, n) = filter_umur(globalvars.list_wahana, globalvars.list_wahana_count, filter_umur)
-  (hasil_filter, n) = filter_tinggi(hasil_filter, n, filter_tinggi)
+  (hasil_filter, n) = filter_umur(globalvars.list_wahana, globalvars.list_wahana_count, fumur)
+  (hasil_filter, n) = filter_tinggi(hasil_filter, n, ftinggi)
 
   print('Hasil pencarian:')
   for i in range(n):
