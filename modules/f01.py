@@ -26,7 +26,7 @@ def load():
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.list_wahana[jmlbrs] = [item[0], item[1], int(item[2]), int(item[3]), bool(item[4])]
+            globalvars.list_wahana[jmlbrs] = [item[0], item[1], int(item[2]), int(item[3]), item[4]=='True']
             jmlbrs += 1
         globalvars.list_wahana_count = jmlbrs
 
