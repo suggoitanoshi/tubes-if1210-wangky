@@ -27,7 +27,7 @@ def topup_saldo():
     else: i += 1
   if found:
     user[6] = get_initial_saldo(user) + topup
-    print('Topup berhasil. Saldo %s bertambah menjadi %d' % (user[1], user[6]))
+    print('Topup berhasil. Saldo %s bertambah menjadi %d' % (user[0], user[6]))
   else:
     print('User tidak ditemukan.')
 
