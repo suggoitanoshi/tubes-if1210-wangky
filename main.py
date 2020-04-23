@@ -35,11 +35,7 @@ while not terminate:
     if command == 'login':
       f04.login()
     elif common.has_login():
-      if command == 'load':
-        pass # TODO: add f01 implementation
-      elif command == 'save':
-        pass # TODO: add f02 implementation
-      elif command == 'signup':
+      if command == 'signup':
         f03.sign_up()
       elif command == 'cari_pemain':
         f05.cari_pemain()
@@ -56,11 +52,11 @@ while not terminate:
       elif command == 'lihat_laporan':
         f11.lihat_laporan()
       elif command == 'tambah_wahana':
-        pass # TODO: add f12 implementation
+        f12.tambah_wahana()
       elif command == 'topup':
         f13.topup_saldo()
       elif command == 'riwayat_wahana':
-        pass # TODO: add f14 implementation
+        f14.riwayat_wahana()
       elif command == 'tiket_pemain':
         f15.tiket_pemain()
       elif command == 'exit':
