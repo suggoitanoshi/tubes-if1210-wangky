@@ -22,7 +22,7 @@ refund_default = ['','','',0]
 refund_tiket = [refund_default for _ in range(MAX_ARRAY_LENGTH)]
 refund_count = 0
 # users: Array of user (Nama, Tanggal_Lahir, Tinggi_Badan, Username, Password, Role, Saldo)
-users_default = ['','',0,'','','',0]
+users_default = ['','',0,'','','',0,'']
 users = [users_default for _ in range(MAX_ARRAY_LENGTH)]
 users_count = 0
 # list_wahana: Array of wahana (ID_Wahana, Nama_Wahana, Harga_Tiket, Batasan_Umur, Batasan_Tinggi)
