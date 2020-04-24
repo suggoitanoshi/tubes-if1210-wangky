@@ -7,19 +7,19 @@ import modules.globalvars as globalvars
 
 def load():
     #User
-    f_user=input('Masukkan nama File User: ')    
+    f_user=input('Masukkan nama File User: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
         #Masukkan data ke array global, catat jumlah data
         jmlbrs=0
         for item in csv_reader:
-            globalvars.users[jmlbrs] = [item[0],item[1],int(item[2]),item[3],item[4],item[5],int(item[6])]
+            globalvars.users[jmlbrs] = [item[0],item[1],int(item[2]),item[3],item[4],item[5],int(item[6]),item[7]]
             jmlbrs += 1
         globalvars.users_count = jmlbrs
-        
+
     #Daftar Wahana
-    f_user=input('Masukkan nama File Daftar Wahana: ')    
+    f_user=input('Masukkan nama File Daftar Wahana: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -31,7 +31,7 @@ def load():
         globalvars.list_wahana_count = jmlbrs
 
     #Pembelian Tiket
-    f_user=input('Masukkan nama File Pembelian Tiket: ')    
+    f_user=input('Masukkan nama File Pembelian Tiket: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -43,7 +43,7 @@ def load():
         globalvars.pembelian_count = jmlbrs
 
     #Penggunaan Tiket
-    f_user=input('Masukkan nama File Penggunaan Tiket: ')    
+    f_user=input('Masukkan nama File Penggunaan Tiket: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -55,7 +55,7 @@ def load():
         globalvars.penggunaan_count = jmlbrs
 
     #Kepemilikan Tiket
-    f_user=input('Masukkan nama File Kepemilikan Tiket: ')    
+    f_user=input('Masukkan nama File Kepemilikan Tiket: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -67,7 +67,7 @@ def load():
         globalvars.kepemilikan_count = jmlbrs
 
     #Refund Tiket
-    f_user=input('Masukkan nama File Refund Tiket: ')    
+    f_user=input('Masukkan nama File Refund Tiket: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -79,7 +79,7 @@ def load():
         globalvars.refund_count = jmlbrs
 
     #Kritik dan Saran
-    f_user=input('Masukkan nama File Kritik dan Saran: ')    
+    f_user=input('Masukkan nama File Kritik dan Saran: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -91,7 +91,7 @@ def load():
         globalvars.kritik_count = jmlbrs
 
     #Kehilangan Tiket
-    f_user=input('Masukkan nama Kehilangan Tiket: ')    
+    f_user=input('Masukkan nama Kehilangan Tiket: ')
     with open('external_files/'+f_user) as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         csv_reader = csv.reader(csv_file, delimiter=',')
