@@ -1,13 +1,11 @@
 import modules.globalvars as globalvars
 # F15 - Melihat Jumlah Tiket Pemain
 
-# KAMUS
-
 def tiket_pemain():
-  """[program fungsi]
+  """Program melihat jumlah tiket yang dimiliki oleh pemain
   ---
   Parameter : -
-  Output : 
+  Output : Jumlah tiket yang dimiliki pemain
   ---
   """
   input_user = input("Masukkan username: ")
@@ -35,7 +33,7 @@ def tiket_pemain():
             j += 1
         tiket_user[tiket_user_count] = [current[2], wahana_name, current[3]]
         tiket_user_count += 1
-    
+
   print("Riwayat: ")
   for i in range(tiket_user_count):
     print('%s|%s|%d' % (tiket_user[i][0], tiket_user[i][1], tiket_user[i][2]))
