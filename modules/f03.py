@@ -19,7 +19,7 @@ def sign_up():
 
     hashed_pass = b01.hashpassword(input_pass)
 
-    globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,hashed_pass,'Pemain',0]
+    globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,hashed_pass,'Pemain',0,'default']
     globalvars.users_count += 1
 
     print("Selamat menjadi pemain, " + input_nama + ". Selamat bermain.")
