@@ -3,13 +3,11 @@ import modules.b01 as b01
 
 # F04 - Sign Up User
 
-# KAMUS
-
 def sign_up():
-    """[program fungsi]
+    """Program dilakukan oleh admin untuk menambah data pengguna baru
     ---
     Parameter : -
-    Output : 
+    Output : Penambahan data pada database
     ---
     """
     input_nama = input("Masukkan nama pemain: ")
@@ -23,5 +21,5 @@ def sign_up():
 
     globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,hashed_pass,'Pemain',0]
     globalvars.users_count += 1
-    
+
     print("Selamat menjadi pemain, " + input_nama + ". Selamat bermain.")
