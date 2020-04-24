@@ -6,10 +6,11 @@ import modules.common as common
 # KAMUS
 
 def cari_pemain():
-    """[program fungsi]
+    """Program melakukan pencarian pemain berdasarkan username, nama,
+    tinggi dan tanggal lahir
     ---
     Parameter : -
-    Output : 
+    Output : Pesan terdaftar/ tidak sebagai pemain
     ---
     """
     if common.is_admin():
@@ -23,7 +24,7 @@ def cari_pemain():
         while not user_found and  i < globalvars.users_count:
             if input_user == globalvars.users[i][3] and input_nama == globalvars.users[i][0] and\
             input_tinggi == globalvars.users[i][2] and input_ttl == globalvars.users[i][1]:
-                user_found = True 
+                user_found = True
                 print(input_nama, "telah terdaftar sebagai pemain, Silahkan Login dan Selamat Bermain.")
             else:
                 i+= 1
