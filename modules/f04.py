@@ -3,18 +3,17 @@ import modules.b01 as b01
 
 # F02 - Login User
 
-# KAMUS
-
 def login():
-    """[program fungsi]
+    """Setiap pengguna yang ingin menjalankan program harus melakukan
+    login
     ---
     Parameter : -
-    Output : Pesan sukses/ gagal login, akun sudah dapat bermain 
+    Output : Pesan sukses/ gagal login, akun sudah dapat bermain
     ---
     """
     input_user = input("Masukkan username: ")
     input_pass = input("Masukkan password: ")
-    
+
     user_found = False
     user_name = ''
     i = 0
