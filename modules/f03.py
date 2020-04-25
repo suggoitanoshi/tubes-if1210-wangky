@@ -22,9 +22,10 @@ def sign_up():
     user_found = False
     i = 0
     while not user_found and  i < globalvars.users_count:
-        if input_user == globalvars.users[i][3]
+        if input_user == globalvars.users[i][3]:
             user_found = True
             print(input_nama, "telah terdaftar sebagai pemain, Silahkan Login dan Selamat Bermain.")
+        else: i+=1
 
     if user_found == False:
         globalvars.users[globalvars.users_count] = [input_nama,input_ttl,int(input_tinggi),input_user,hashed_pass,'Pemain',0,'default']
