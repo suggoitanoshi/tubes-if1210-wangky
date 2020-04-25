@@ -1,11 +1,12 @@
 import modules.common as common
 import modules.globalvars as globalvars
 
-def can_play(w):
+def can_play(w,current_date):
   """Menentukan apakah pengguna dapat bermain di wahana
   Parameter
   ---
   w: wahana
+  current_date: tanggal hari ini (dd/mm/yyyy)
   Return
   ---
   Pemain bisa bermain/tidak di wahana tersebut
@@ -13,7 +14,7 @@ def can_play(w):
   tinggi = 0
   umur = 0
   tinggi = globalvars.current_login[2]
-  umur = 2020 - int(globalvars.current_login[1][6:])
+  umur = int(current_date[6:]) - int(globalvars.current_login[1][6:])
   kondisi = (w[3] == 0) or (w[3] == 1 and umur > 17) or (w[3] == 2 and umur <= 17)
   kondisi = kondisi and ((w[4] and tinggi >= 170) or (not w[4]))
   return kondisi
@@ -51,7 +52,7 @@ def buy_ticket():
     current_tanggal = input('Masukkan Tanggal hari ini: ')
     buy_amount = int(input('Jumlah tiket yang dibeli: '))
     wahana = search_wahana(current_id_wahana)
-    if can_play(wahana):
+    if can_play(wahana, current_tanggal):
       if(buy_amount*wahana[2] <= globalvars.current_login[6]):
         nama_wahana = wahana[1]
         username = globalvars.current_login[3]
