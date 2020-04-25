@@ -21,6 +21,7 @@ def tiket_pemain():
         if tiket_user[j][0] == current[2]:
           found = True
           tiket_user[j][2] += current[3]
+        else: j+=1
       if not found:
         j = 0
         wahana_found = False
@@ -33,6 +34,7 @@ def tiket_pemain():
             j += 1
         tiket_user[tiket_user_count] = [current[2], wahana_name, current[3]]
         tiket_user_count += 1
+    i+=1
 
   print("Riwayat: ")
   for i in range(tiket_user_count):
