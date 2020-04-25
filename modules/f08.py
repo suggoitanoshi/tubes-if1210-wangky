@@ -40,21 +40,25 @@ def has_enough_tickets(wahana_id, jml_tiket):
         has_ticket = globalvars.kepemilikan_tiket[i][2]
   found = False
   i = 0
-  while not found and i < globalvars.penggunaan_count:
-    if globalvars.penggunaan_tiket[i][0] == globalvars.current_login[3] and\
-      globalvars.penggunaan_tiket[i][2] == wahana_id:
-        found = True
-        enough_ticket = (has_ticket - globalvars.penggunaan_tiket[i][3]) >= jml_tiket
+  enough_ticket = has_ticket >= jml_tiket
   return enough_ticket
 
 def use_ticket():
   id_wahana = input('Masukkan ID Wahana: ')
   tggl_skrg = input('Masukkan tanggal hari ini: ')
-  jml_tiket = input('Jumlah tiket yang digunakan: ')
+  jml_tiket = int(input('Jumlah tiket yang digunakan: '))
   if wahana_exists(id_wahana) and has_enough_tickets(id_wahana, jml_tiket):
-    globalvars.penggunaan_count += 1
-    globalvars.penggunaan_tiket[globalvars.penggunaan_count-1] =\
+    globalvars.penggunaan_tiket[globalvars.penggunaan_count] =\
       [globalvars.current_login[3], tggl_skrg, id_wahana, jml_tiket]
+    globalvars.penggunaan_count += 1
+    kepemilikan_found = False
+    i = 0
+    while not kepemilikan_found and i < globalvars.kepemilikan_count:
+      curr = globalvars.kepemilikan_tiket[i]
+      if curr[0] == globalvars.current_login[3] and curr[1] == id_wahana:
+        globalvars.kepemilikan_tiket[i][2] -= jml_tiket
+        kepemilikan_found = True
+      else: i+=1
     print('Terimakasih telah bermain.')
   else:
     print(globalvars.NOT_VALID_TICKET_ERROR)
