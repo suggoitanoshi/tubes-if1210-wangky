@@ -16,7 +16,7 @@ def cari_pemain():
     if common.is_admin():
         input_user = input("Masukkan username: ")
         input_nama = input("Masukkan nama: ")
-        input_tinggi = input("Tinggi Pemain: ")
+        input_tinggi = int(input("Tinggi Pemain: "))
         input_ttl = input("Tanggal Lahir Pemain: ")
 
         user_found = False
