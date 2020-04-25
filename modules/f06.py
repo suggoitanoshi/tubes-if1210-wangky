@@ -24,7 +24,7 @@ def filter_umur(w, n, f):
   fw = [globalvars.list_wahana_default for _ in range(n)]
   fn = 0
   for i in range(n):
-    if w[i][3] == f:
+    if w[i][3] == f or f == 0:
       fw[fn] = w[i]
       fn += 1
   return (fw, fn)
@@ -50,7 +50,7 @@ def filter_tinggi(w, n, f):
   fw = [globalvars.list_wahana_default for _ in range(n)]
   fn = 0
   for i in range(n):
-    if (w[i][4] and f):
+    if (w[i][4] == f):
       fw[fn] = w[i]
       fn += 1
   return (fw, fn)

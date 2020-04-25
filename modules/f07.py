@@ -14,7 +14,7 @@ def can_play(w):
   umur = 0
   tinggi = globalvars.current_login[2]
   umur = 2020 - int(globalvars.current_login[1][6:])
-  kondisi = (w[3] == 0) or (w[3] == 1 and umur <= 17) or (w[3] == 2 and umur > 17)
+  kondisi = (w[3] == 0) or (w[3] == 1 and umur > 17) or (w[3] == 2 and umur <= 17)
   kondisi = kondisi and ((w[4] and tinggi >= 170) or (not w[4]))
   return kondisi
 
