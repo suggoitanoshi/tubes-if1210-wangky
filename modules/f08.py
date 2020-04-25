@@ -38,6 +38,7 @@ def has_enough_tickets(wahana_id, jml_tiket):
       globalvars.kepemilikan_tiket[i][1] == wahana_id:
         found = True
         has_ticket = globalvars.kepemilikan_tiket[i][2]
+    else: i+=1
   found = False
   i = 0
   enough_ticket = has_ticket >= jml_tiket
