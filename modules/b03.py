@@ -9,25 +9,25 @@ def sort_wahana_by_ticket():
   ret = [[globalvars.list_wahana[i][0],globalvars.list_wahana[i][1],0]
          for i in range(globalvars.list_wahana_count)]
   # Transformasi menjadi array of [string, string, int]
-  for i in range(globalvars.penggunaan_count):
-    cid = globalvars.penggunaan_tiket[i][2] # ID Wahana
-    n = globalvars.penggunaan_tiket[i][3] # Jumlah tiket
+  for i in range(globalvars.pembelian_count):
+    cid = globalvars.pembelian_tiket[i][2] # ID Wahana
+    n = globalvars.pembelian_tiket[i][3] # Jumlah tiket
     # Mencari elemen wahana yang sesuai, karena unsorted.
     found = False
     j = 0
     while not found and j < globalvars.list_wahana_count:
-      if ret[i][0] == cid:
-        ret[i][2] += n
+      if ret[j][0] == cid:
+        ret[j][2] += n
         found = True
       else: j += 1
   # Sorting (Insertion)
   for i in range(1, globalvars.list_wahana_count):
-    curr = ret[i]
+    curr = ret[i][:]
     j = i-1
-    while j >= 0 and ret[j][2] > curr[2]:
+    while j >= 0 and ret[j][2] < curr[2]:
       ret[j+1] = ret[j]
       j -= 1
-    ret[j] = curr
+    ret[j+1] = curr
   return ret
 
 def get_top_3_wahana():
@@ -36,6 +36,7 @@ def get_top_3_wahana():
   ---
   3 Wahana sebagai list
   """
+  breakpoint()
   return sort_wahana_by_ticket()[:3]
 
 def best_wahana():
