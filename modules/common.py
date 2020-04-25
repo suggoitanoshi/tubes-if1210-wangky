@@ -4,7 +4,7 @@ import modules.globalvars as globalvars
 
 def has_login():
   """Menentukan apakah pengguna sudah login dalam sesi ini"""
-  return globalvars.current_login[2] != '' 
+  return globalvars.current_login[3] != '' 
 def is_player():
   """Menentukan apakah pengguna yang login adalah player atau bukan"""
   return globalvars.current_login[5] == 'Pemain'

@@ -22,8 +22,6 @@ import modules.f16 as f16
 import modules.b03 as b03
 import modules.b04 as b04
 
-# DEBUGGING STUFF
-DEBUG = False
 
 # Main Program
 def main():
@@ -78,5 +76,4 @@ def main():
     else:
       print(globalvars.NOT_LOADED)
 
-if not DEBUG:
-  main()
+main()
