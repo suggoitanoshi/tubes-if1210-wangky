@@ -52,6 +52,7 @@ def save():
             writer.writerow(globalvars.kepemilikan_tiket[i])
 
     #Refund Tiket
+    f_user=input('Masukkan nama File Refund Tiket: ')
     with open('external_files/'+f_user,mode='w',newline='') as csv_file:
         #baca isi file, masukkan ke variabel csv_reader
         writer = csv.writer(csv_file, delimiter=',')
