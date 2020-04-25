@@ -60,6 +60,7 @@ def refund():
                 Temp[i]=globalvars.refund_tiket[i]
             Temp[globalvars.refund_count]=(globalvars.current_login[2],current_tanggal,current_id_wahana,refund_amount)
             globalvars.refund_tiket=Temp
+            globalvars.refund_count+=1
             # Setelah uang dikembalikan ke saldo dan update pada database
             print("Uang refund sudah kami berikan pada akun Anda.")
         else:

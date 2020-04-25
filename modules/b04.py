@@ -29,6 +29,7 @@ def tiket_hilang():
             Temp[i]=globalvars.kehilangan_tiket[i]
         Temp[globalvars.kehilangan_count]=(current_username,current_tanggal,current_id_wahana,lost_count)
         globalvars.kehilangan_tiket=Temp
+        kehilangan_count+=1
         # Setelah laporan diterima dan update pada database
         print("Laporan kehilangan tiket Anda telah direkam.")
 

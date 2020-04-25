@@ -12,7 +12,8 @@ def kritik_saran():
     Temp = [0 for i in range(globalvars.kritik_count+1)]
     for i in range(globalvars.kritik_count):
         Temp[i]=globalvars.kritik_dan_saran[i]
-    Temp[globalvars.kritik_count]=(globalvars.current_login[2],current_tanggal,current_id_wahana,report)
+    Temp[globalvars.kritik_count]=(globalvars.current_login[3],current_tanggal,current_id_wahana,report)
     globalvars.kritik_dan_saran=Temp
+    globalvars.kritik_count+=1
     # Setelah laporan diterima dan update pada database
     print("Kritik dan saran Anda kami terima.")
