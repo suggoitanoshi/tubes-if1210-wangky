@@ -52,14 +52,25 @@ def buy_ticket():
     current_tanggal = input('Masukkan Tanggal hari ini: ')
     buy_amount = int(input('Jumlah tiket yang dibeli: '))
     wahana = search_wahana(current_id_wahana)
-    if can_play(wahana, current_tanggal):
+    if wahana[1] == '':
+      print("Wahana tidak valid.")
+    elif can_play(wahana, current_tanggal):
       if(buy_amount*wahana[2] <= globalvars.current_login[6]):
         nama_wahana = wahana[1]
         username = globalvars.current_login[3]
         globalvars.current_login[6] -= wahana[2]
-        globalvars.kepemilikan_count += 1
-        globalvars.kepemilikan_tiket[globalvars.kepemilikan_count-1] =\
-          [username,wahana[0], buy_amount]
+        kepemilikan_found = False
+        i = 0
+        while not kepemilikan_found and i < globalvars.kepemilikan_count:
+          if globalvars.kepemilikan_tiket[i][0] == username and\
+            globalvars.kepemilikan_tiket[i][1] == current_id_wahana:
+              globalvars.kepemilikan_tiket[i][2] += buy_amount
+              kepemilikan_found = True
+          else: i += 1
+        if not kepemilikan_found:
+          globalvars.kepemilikan_tiket[globalvars.kepemilikan_count] =\
+            [username,wahana[0], buy_amount]
+          globalvars.kepemilikan_count += 1
         globalvars.pembelian_count += 1
         globalvars.pembelian_tiket[globalvars.pembelian_count-1] =\
           [username,current_tanggal,wahana[0],buy_amount]
