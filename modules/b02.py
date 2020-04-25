@@ -20,7 +20,6 @@ def upgrade_gold():
         if upgrade_user == globalvars.users[i][3] :
             user_found = True
             globalvars.users[i][7] = "gold"
-            #belom tambahin di wahana
             print("Akun Anda telah di-upgrade.")
         else:
             i+= 1
