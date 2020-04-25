@@ -18,7 +18,7 @@ import modules.f14 as f14
 import modules.f15 as f15
 import modules.f16 as f16
 
-#import modules.b02 as b02
+import modules.b02 as b02
 import modules.b03 as b03
 import modules.b04 as b04
 
@@ -67,6 +67,8 @@ def main():
           f14.riwayat_wahana()
         elif command == 'tiket_pemain':
           f15.tiket_pemain()
+        elif command == 'upgrade_gold':
+          b02.upgrade_gold()
         elif command == 'best_wahana':
           b03.best_wahana()
         elif command == 'tiket_hilang':
