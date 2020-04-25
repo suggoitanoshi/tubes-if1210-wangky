@@ -10,7 +10,6 @@ def can_play(w):
   ---
   Pemain bisa bermain/tidak di wahana tersebut
   """
-  breakpoint()
   tinggi = 0
   umur = 0
   tinggi = globalvars.current_login[2]
