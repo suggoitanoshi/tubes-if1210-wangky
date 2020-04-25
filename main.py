@@ -35,16 +35,16 @@ def main():
     if command == 'load':
       f01.load()
     elif command == 'save':
-      f02.save()
+      f03.save()
     elif command == 'exit':
       f16.exit()
       terminate = True
     elif globalvars.loaded:
       if command == 'login':
-        f04.login()
+        f02.login()
       elif common.has_login():
         if command == 'signup':
-          f03.sign_up()
+          f04.sign_up()
         elif command == 'cari_pemain':
           f05.cari_pemain()
         elif command == 'cari':
