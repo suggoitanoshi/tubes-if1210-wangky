@@ -3,15 +3,14 @@ import modules.globalvars as globalvars
 
 def sort_laporan():
     # Prosedur mengurutkan kritik_dan_saran berdasarkan ID secara alfabetis
-    Temp=[0 for i in range(globalvars.kritik_count)]
-    Max=globalvars.kritik_dan_saran[0][2]
-    for i in range(globalvars.kritik_count):
-        # String dapat diurutkan layaknya bilangan dengan operator berdasarkan urutannya dari A-Z
-        if globalvars.kritik_dan_saran[i][2]<Max:
-            Temp[i]=globalvars.kritik_dan_saran[i]
-        else:
-            Max=globalvars.kritik_dan_saran[1][2]
-    globalvars.kritik_dan_saran=Temp
+    for Pass in range (globalvars.kritik_count-1):
+        indexMin = Pass
+        for i in range(Pass+1,globalvars.kritik_count):
+            if globalvars.kritik_dan_saran[i][2]<globalvars.kritik_dan_saran[indexMin][2]:
+                indexMin=i
+        Temp=globalvars.kritik_dan_saran[indexMin]
+        globalvars.kritik_dan_saran[indexMin]=globalvars.kritik_dan_saran[Pass]
+        globalvars.kritik_dan_saran[Pass]=Temp
     return
 
 def lihat_laporan():
