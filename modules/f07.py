@@ -58,7 +58,7 @@ def buy_ticket():
       if(buy_amount*wahana[2] <= globalvars.current_login[6]):
         nama_wahana = wahana[1]
         username = globalvars.current_login[3]
-        globalvars.current_login[6] -= wahana[2] * (0.5 if globalvars.current_login == 'gold' else 1)
+        globalvars.current_login[6] -= wahana[2] * (0.5 if globalvars.current_login[7] == 'gold' else 1)
         kepemilikan_found = False
         i = 0
         while not kepemilikan_found and i < globalvars.kepemilikan_count:

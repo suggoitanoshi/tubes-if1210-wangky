@@ -36,7 +36,6 @@ def get_top_3_wahana():
   ---
   3 Wahana sebagai list
   """
-  breakpoint()
   return sort_wahana_by_ticket()[:3]
 
 def best_wahana():

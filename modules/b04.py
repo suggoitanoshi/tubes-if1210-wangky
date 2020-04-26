@@ -12,13 +12,14 @@ def tiket_hilang():
         current_username = input("Masukkan username: ")
         current_tanggal = input('Tanggal kehilangan tiket: ')
         current_id_wahana = input('ID wahana: ')
-        lost_count = input('Jumlah tiket yang dihilangkan: ')
+        lost_count = int(input('Jumlah tiket yang dihilangkan: '))
         #Mengurangi kepemilikan tiket sesuai dengan jumlah tiket yang hilang
         i = 0
         #Mencari username yang kehilangan tiket dan tiket untuk wahana apa
         while i < globalvars.kepemilikan_count:
             if globalvars.kepemilikan_tiket[i][0] == current_username and globalvars.kepemilikan_tiket[i][1] == current_id_wahana:
                 globalvars.kepemilikan_tiket[i][2]-=lost_count
+                i=globalvars.kepemilikan_count
             else:
                 i+=1
         # Untuk update database kehilangan_tiket

@@ -15,7 +15,7 @@ def check_ticket(id,jml):
     '''
     i = 0
     while i < globalvars.kepemilikan_count:
-        if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[2] and globalvars.kepemilikan_tiket[i][1] == id:
+        if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[3] and globalvars.kepemilikan_tiket[i][1] == id:
             if globalvars.kepemilikan_tiket[i][2]>= jml:
                 return True
             else:
@@ -44,12 +44,13 @@ def refund():
                 if current_id_wahana == globalvars.list_wahana[j][0]:
                     wahanaFound = True
                 else: j += 1
-            globalvars.current_login[5]+=0.5*refund_amount*globalvars.list_wahana[j][2]
+            globalvars.current_login[6]+=int(0.5*refund_amount*globalvars.list_wahana[j][2])        
             # Update data kepemilikan
             i=0
             while i<globalvars.kepemilikan_count:
-                if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[2]:
+                if globalvars.kepemilikan_tiket[i][0] == globalvars.current_login[3]:
                     globalvars.kepemilikan_tiket[i][2]-=refund_amount
+                    i=globalvars.kepemilikan_count
                 else:
                     i+=1
             # Masukkan data refund ke array
@@ -58,7 +59,7 @@ def refund():
             Temp = [0 for i in range(globalvars.refund_count+1)]
             for i in range(globalvars.refund_count):
                 Temp[i]=globalvars.refund_tiket[i]
-            Temp[globalvars.refund_count]=(globalvars.current_login[2],current_tanggal,current_id_wahana,refund_amount)
+            Temp[globalvars.refund_count]=(globalvars.current_login[3],current_tanggal,current_id_wahana,refund_amount)
             globalvars.refund_tiket=Temp
             globalvars.refund_count+=1
             # Setelah uang dikembalikan ke saldo dan update pada database
